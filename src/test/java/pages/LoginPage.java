@@ -1,27 +1,32 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import steps.Hooks;
 
-public class LoginPage {
+public class LoginPage extends Hooks {
     public LoginPage(WebDriver navegador) {
-        Hooks.driver = navegador;
+        driver = navegador;
     }
-
     private By campoEmail = By.id("email");
     private By campoSenha = By.id("senha");
     private By btnClicar = By.cssSelector("button[type=submit]");
+    private By mensagemErro = By.className("alert");
 
     public void preencherLogin(String email, String senha) {
-        Hooks.driver.findElement(campoEmail).sendKeys(email);
-        Hooks.driver.findElement(campoSenha).sendKeys(senha);
+        driver.findElement(campoEmail).sendKeys(email);
+        driver.findElement(campoSenha).sendKeys(senha);
     }
     public void clicarBtnLogin() {
-        Hooks.driver.findElement(btnClicar).click();
+        driver.findElement(btnClicar).click();
     }
     public void validaPaginaLogin() {
-        Hooks.driver.get("https://seubarriga.wcaquino.me/login");
+        driver.get("https://seubarriga.wcaquino.me/login");
+    }
+    public void mensagemErro(String mensagem){
+        String texto = driver.findElement(mensagemErro).getText();
+        Assert.assertTrue(texto.contains(mensagem));
     }
 }
 

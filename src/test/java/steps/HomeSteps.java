@@ -9,7 +9,6 @@ public class HomeSteps{
 
     HomePage homePage = new HomePage(driver);
 
-
     @Entao("o sistema mostrara uma mensagem de sucesso {string}")
     public void o_sistema_mostrara_uma_mensagem_de_sucesso(String mensagem) {
         homePage.validaHome(mensagem);

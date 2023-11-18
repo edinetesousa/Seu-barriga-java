@@ -56,7 +56,7 @@ Entendendo a estrutura do projeto
 4. O Selenium já possui implementações para vários navegadores.
 5. O Webdriver é responsável por fazer a comunicação com o navegador;
 
-A 1ª classe a ser criada será a BrowserFactory
+1ª Passo: Criar a classe BrowserFactory
 -
 Nesse projeto essa classe será criada na pasta src/test/java/**runner**;
 Aqui será instanciada a classe para navegar, retornar as configurações do navegador e ser instanciada e chamada em outras classes.
@@ -70,21 +70,21 @@ Aqui será instanciada a classe para navegar, retornar as configurações do nav
    b. navegador.manage().window().maximize();
 6. Retorno do navegador;
 
-A 2ª classe a ser criada é a de Hooks
+2ª Passo: Criar a classe Hooks
 -
 Esta classe da suporte ao teste
 
-2. Utilização do Junit
+1. Utilização do Junit
    a. Pré condições (Ex.Abrir navegador);
    b. Pós condições (Ex. Fechar navegador);
    c. Steps (São os passos que serão executados após um comportamento;
    d. Validação;
-3. Annotations
+2. Annotations
    a. Funciona com marcadores no código;
    b. Define o que será executado;
    c. Têm a Função de substituir o método main
 
-A 3ª classe a ser criada é a de Teste
+3ª Passo: Criar a classe de Teste
 -
 1. Primeiro precisamos estender o hooks
 2. @test (Executa o passo a passo dos testes)

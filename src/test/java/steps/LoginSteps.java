@@ -1,10 +1,7 @@
 package steps;
 
 import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
-import org.openqa.selenium.WebDriver;
-import pages.HomePage;
 import pages.LoginPage;
 
 import static steps.Hooks.driver;
@@ -31,9 +28,5 @@ public class LoginSteps{
     @Quando("clicar no botao entrar")
     public void clicar_no_botao_entrar() {
         loginPage.clicarBtnLogin();
-    }
-    @Entao("o sistema mostrara uma mensagem {string} de erro")
-    public void o_sistema_mostrara_uma_mensagem_de_erro(String mensagem) {
-//        loginPage.validaHome(mensagem);
     }
 }

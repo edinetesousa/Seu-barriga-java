@@ -60,9 +60,20 @@ public class Actions extends Hooks {
             waitElementsVisible(element, 10);
             String message = driver.findElement(element).getText();
             Assert.assertEquals(text, message);
-            System.out.println("Visualizou a mensagem " + text);
+            System.out.println("Validou que " + text + " é igual a " + message);
         } catch (Exception erro) {
             System.out.println("Não visualizou a mensagem " + text);
+        }
+    }
+
+    public void clear(By element) {
+        try {
+            waitElementsVisible(element, 10);
+            driver.findElement(element).clear();
+            System.out.println("Limpou a informação no elemento " + element);
+        } catch (Exception erro) {
+            System.out.println("Não limpou a informação no elemento " + element);
+            System.out.println(erro);
         }
     }
 }

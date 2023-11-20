@@ -1,9 +1,7 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import steps.Hooks;
 import support.Actions;
 
 

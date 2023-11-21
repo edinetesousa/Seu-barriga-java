@@ -16,7 +16,7 @@ Funcionalidade: Login
     Entao o sistema mostrara uma mensagem "<mensagem>" de erro
 
     Exemplos:
-      | email           | senha  | mensagem  | fluxo             |
+      | email           | senha  | mensagem         | fluxo             |
       | teste@teste.com | 123456 |Bem vindo, thiago!| Login com sucesso |
 #      |                 | 123456 | Email é um campo obrigatório     | Login campo email em branco |
 #      | 123@a.com       | 123456 | Problemas com o login do usuário | Login com email incorreto   |

@@ -1,6 +1,9 @@
 # SeuBarrigaJava
 
 Repositório criado para estudo de automação de testes com Java 11 - JDK (SE), Apache MAven (com variáveis de ambiente), IntelliJ, Selenium, JUnit e Cucumber.
+Este estudo foi desenvolvido em grupo para trabalharmos de forma colaborativa e aperfeiçoarmos nossas competÊncias também com GitHub.
+
+Neste projeto utilizamos a linguagem Gherkin para a escreita de cenários de testes e BDD.
 
 O primeiro passo é configurar o arquivo **pom.xml**:
 - 

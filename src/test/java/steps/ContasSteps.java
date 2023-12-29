@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
+import org.junit.Assert;
 import pages.ContasPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -19,7 +20,7 @@ public class ContasSteps {
         loginPage.validaPaginaLogin();
         loginPage.preencherLogin("teste@teste.com", "123456");
         loginPage.clicarBtnLogin();
-        homePage.validaHome("Bem vindo, thiago!");
+        Assert.assertEquals(homePage.validaHome(), "Bem vindo, thiago!");
     }
 
     @Dado("que o usuário ao clicar em Contas e clicar em Adicionar")
@@ -33,7 +34,7 @@ public class ContasSteps {
 
     @Então("o sistema exibirá a {string}")
     public void o_sistema_exibirá_a(String _mensagem) {
-        contasPage.validaAddConta(_mensagem);
+        Assert.assertEquals(contasPage.validaAddConta(), _mensagem);
     }
 
 }

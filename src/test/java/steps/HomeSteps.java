@@ -1,6 +1,7 @@
 package steps;
 
 import io.cucumber.java.pt.Entao;
+import org.junit.Assert;
 import pages.HomePage;
 
 import static steps.Hooks.driver;
@@ -11,6 +12,6 @@ public class HomeSteps{
 
     @Entao("o sistema mostrara uma mensagem de sucesso {string}")
     public void o_sistema_mostrara_uma_mensagem_de_sucesso(String mensagem) {
-        homePage.validaHome(mensagem);
+        Assert.assertEquals(homePage.validaHome(), mensagem);
     }
 }

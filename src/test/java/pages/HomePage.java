@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import support.Actions;
@@ -18,8 +19,8 @@ public class HomePage extends Actions {
     private By btnResumoMensal = By.cssSelector("a[href='/extrato']");
     private By btnSair = By.cssSelector("a[href='/logout']");
 
-    public void validaHome(String _message) {
-        get_text(validHome, _message);
+    public String validaHome() {
+        return get_text(validHome);
     }
     public void clickBtnContas(String option){
         click(btnContas);

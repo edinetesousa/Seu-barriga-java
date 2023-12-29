@@ -55,17 +55,18 @@ public class Actions extends Hooks {
         }
         return null;
     }
-    public void get_text(By element, String text){
+    public String get_text(By element){
+        String text = null;
         try {
             waitElementsVisible(element, 10);
-            String message = driver.findElement(element).getText();
-            Assert.assertEquals(text, message);
-            System.out.println("Validou que " + text + " é igual a " + message);
-        } catch (Exception erro) {
+            text = driver.findElement(element).getText();
+            System.out.println("Validou o " + text);
+        }
+        catch (Exception erro) {
             System.out.println("Não visualizou a mensagem " + text);
         }
+        return text;
     }
-
     public void clear(By element) {
         try {
             waitElementsVisible(element, 10);
@@ -75,5 +76,16 @@ public class Actions extends Hooks {
             System.out.println("Não limpou a informação no elemento " + element);
             System.out.println(erro);
         }
+    }
+    public String get_url(){
+        String url = null;
+        try {
+            url = driver.getCurrentUrl();
+            System.out.println("Validou o " + url);
+        }
+        catch (Exception erro) {
+            System.out.println("Não visualizou a mensagem " + url);
+        }
+        return url;
     }
 }

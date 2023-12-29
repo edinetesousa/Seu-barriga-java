@@ -13,7 +13,7 @@ public class ContasPage extends Actions {
     private By fieldNome = By.id("nome");
     private By btnSalvar = By.cssSelector("button[type=submit]");
     private By tableContas = By.id("table");
-    private By message = By.className("alert");
+    private By messagem = By.className("alert");
     private By btnRemove = By.cssSelector("span[class='glyphicon glyphicon-remove-circle']");
     private By btnEdit = By.cssSelector("span[class='glyphicon glyphicon-edit']");
 
@@ -22,8 +22,8 @@ public class ContasPage extends Actions {
         set(fieldNome, _message);
         click(btnSalvar);
     }
-    public void validaAddConta(String _message){
-        get_text(message, _message);
+    public String validaAddConta(){
+        return get_text(messagem);
     }
     public void editConta(String _message){
         homePage.clickBtnContas("Listar");

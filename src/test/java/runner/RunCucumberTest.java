@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        tags = "@LoginSucesso",
+        tags = "",
         glue = "steps",
         monochrome = false,
         dryRun = false,

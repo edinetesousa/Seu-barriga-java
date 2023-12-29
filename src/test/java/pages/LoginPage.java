@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import support.Actions;
 
-
-
 public class LoginPage extends Actions {
     public LoginPage(WebDriver navegador) {
         driver = navegador;
@@ -13,7 +11,7 @@ public class LoginPage extends Actions {
     private By fieldEmail = By.id("email");
     private By fieldPassword = By.id("senha");
     private By btnEntrar = By.cssSelector("button[type=submit]");
-    private By message = By.className("alert");
+    private By validaMessagem = By.className("alert");
 
     public void preencherLogin(String email, String password) {
         set(fieldEmail, email);
@@ -26,8 +24,8 @@ public class LoginPage extends Actions {
     public void validaPaginaLogin() {
         driver.get("https://seubarriga.wcaquino.me/login");
     }
-    public void mensagemErro(String _message){
-        get_text(message, _message);
+    public String mensagemErro(){
+       return get_text(validaMessagem);
     }
 }
 

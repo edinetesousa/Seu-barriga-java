@@ -32,7 +32,16 @@ public class Actions extends Hooks {
             System.out.println(erro);
         }
     }
-
+    public void clickIndex(By element, int index) {
+        try {
+            waitElementsVisible(element, 10);
+            driver.findElements(element).get(index).click();
+            System.out.println("Clicou no elemento " + element + "e no index " + index);
+        } catch (Exception erro) {
+            System.out.println("Não clicou no elemento " + element + "de index " + index);
+            System.out.println(erro);
+        }
+    }
     public void set(By element, String text){
         try {
             waitElementsVisible(element, 10);
@@ -64,6 +73,17 @@ public class Actions extends Hooks {
         }
         catch (Exception erro) {
             System.out.println("Não visualizou a mensagem " + text);
+        }
+        return text;
+    }
+    public String getTextIndex(By element, int index) {
+        String text = null;
+        try {
+            waitElementsVisible(element, 10);
+            text = driver.findElements(element).get(index).getText();
+            System.out.println("Validou o " + text + "com o index " + index);
+        } catch (Exception erro) {
+            System.out.println("Não visualizou a mensagem " + text + "com o index " + index);
         }
         return text;
     }

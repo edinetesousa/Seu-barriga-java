@@ -18,7 +18,6 @@ public class CadastroSteps extends Utils {
         cadastroPage.clicarNoMenuNovoUsuario();
         Assert.assertEquals(cadastroPage.validaPageCadastro(), "https://seubarriga.wcaquino.me/cadastro");
     }
-
     @Quando("o usuario preencher os dados necessarios para o cadastro")
     public void o_usuario_preencher_os_dados_necessarios_para_o_cadastro() {
         cadastroPage.preencherCamposObrigatorios(getConta(), getRandomEmail(), "123456");

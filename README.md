@@ -86,7 +86,7 @@ Esta classe da suporte ao teste
 
 3ª Passo: Criar a classe de Teste
 -
-1. Primeiro precisamos estender o hooks
+1. Primeiro precisamos extender o hooks
 2. @test (Executa o passo a passo dos testes)
 3. @Displayname (Dizer qual o nome do teste que será executado. ex:Cenário)
 4. teste() 

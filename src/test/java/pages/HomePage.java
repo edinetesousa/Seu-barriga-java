@@ -3,19 +3,46 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import steps.Hooks;
+import support.Actions;
 
-public class HomePage {
+public class HomePage extends Actions {
+
     public HomePage(WebDriver navegador) {
-        Hooks.driver = navegador;
-    }
-    private By validaHome = By.className("class=\"alert alert-success\"");
-
-    public void validaHome(String mensagem){
-        String texto = Hooks.driver.findElement(validaHome).getText();
-        Assert.assertEquals(texto, mensagem);
-        System.out.println(texto);
+        driver = navegador;
     }
 
+    private By validHome = By.className("alert");
+    private By btnContas = By.cssSelector(".dropdown a[href='/']");
+    private By btnAdicionar = By.cssSelector("a[href='/addConta']");
+    private By btnListar = By.cssSelector("a[href='/contas']");
+    private By btnCriarMovimentacao = By.cssSelector("a[href='/movimentacao']");
+    private By btnResumoMensal = By.cssSelector("a[href='/extrato']");
+    private By btnSair = By.cssSelector("a[href='/logout']");
+
+    public String validaHome() {
+        return get_text(validHome);
+    }
+    public void clickBtnContas(String option){
+        click(btnContas);
+        try {
+            if (option == "Adicionar") {
+                click(btnAdicionar);
+            } else if (option == "Listar") {
+                click(btnListar);
+            }
+        }
+        catch(Exception msg){
+                System.out.println(msg);
+        }
+    }
+    public void clickBtnCriarMovimentacao(){
+        click(btnCriarMovimentacao);
+    }
+    public void clickBtnResumoMensal(){
+        click(btnResumoMensal);
+    }
+    public void clickBtnSair(){
+        click(btnSair);
+    }
 
 }

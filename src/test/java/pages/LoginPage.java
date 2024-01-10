@@ -2,26 +2,30 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import steps.Hooks;
+import support.Actions;
 
-public class LoginPage {
+public class LoginPage extends Actions {
     public LoginPage(WebDriver navegador) {
-        Hooks.driver = navegador;
+        driver = navegador;
+    }
+    private By fieldEmail = By.id("email");
+    private By fieldPassword = By.id("senha");
+    private By btnEntrar = By.cssSelector("button[type=submit]");
+    private By validaMessagem = By.className("alert");
+
+    public void preencherLogin(String email, String password) {
+        set(fieldEmail, email);
+        set(fieldPassword, password);
     }
 
-    private By campoEmail = By.id("email");
-    private By campoSenha = By.id("senha");
-    private By btnClicar = By.cssSelector("button[type=submit]");
-
-    public void preencherLogin(String email, String senha) {
-        Hooks.driver.findElement(campoEmail).sendKeys(email);
-        Hooks.driver.findElement(campoSenha).sendKeys(senha);
-    }
     public void clicarBtnLogin() {
-        Hooks.driver.findElement(btnClicar).click();
+        click(btnEntrar);
     }
     public void validaPaginaLogin() {
-        Hooks.driver.get("https://seubarriga.wcaquino.me/login");
+        driver.get("https://seubarriga.wcaquino.me/login");
+    }
+    public String mensagemErro(){
+       return get_text(validaMessagem);
     }
 }
 
